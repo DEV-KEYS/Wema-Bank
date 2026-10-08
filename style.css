@@ -1,3 +1,7 @@
+/* =========================================================
+   WEMA BANK HOMEPAGE RECREATION
+   Beginner-friendly CSS
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -6,34 +10,36 @@
 }
 
 :root {
-  --wema-purple: #a31696;
-  --wema-purple-dark: #7e1676;
-  --wema-pink: #ed43ca;
-  --wema-text: #2c3140;
-  --wema-muted: #6f7380;
-  --wema-gray: #ecebed;
-  --wema-soft: #faf0fb;
-  --footer-purple: #8f1697;
-  --hero-purple: #7d2c88;
+     --purple:        #981D87;   /* main brand purple      */
+    --purple-light:  #B11892;   /* lighter magenta purple */
+    --purple-dark:   #4F2356;   /* footer / dark purple   */
+    --red:           #E8323E;   /* small red accent       */
+    --text-dark:     #111928;   /* headings               */
+    --text-grey:     #858A8B;   /* body text              */
+    --bg-grey:       #F7F7F8;   /* light grey section bg  */
+    --bg-tint:       #FDF3FB;   /* light purple tint bg   */
+    --white:         #FFFFFF;
+
 }
 
+
+
+/* 
 html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   font-family: "Inter", Arial, sans-serif;
   color: var(--wema-text);
   background: #fff;
+  font-size: 14px;
+  /* font-style: ; */
+  font-weight: 400px;
   overflow-x: hidden;
 }
 
-body,
-a,
-button,
-input {
-  -webkit-font-smoothing: antialiased;
-}
+
 
 a {
   color: inherit;
@@ -52,10 +58,8 @@ input {
 
 .content-container,
 .header-container {
-  /* width: min(94%, 1440px);
-   */
-   width: 94%;
-   max-width: 1440px;
+  min-width: 94%;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -68,12 +72,15 @@ input {
   position: relative;
   z-index: 100;
   background: #fff;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .header-top {
-  height: 86px;
+  height: 56px;
   border-bottom: 1px solid #e7e7e7;
   background: #fff;
+  font-size: 16px;
 }
 
 .header-container {
@@ -88,9 +95,11 @@ input {
 }
 
 .logo-link img {
-  width: 238px;
-  height: auto;
+  width: 200px;
+  height: 30px;
   object-fit: contain;
+  margin-left: -15px;
+  margin-bottom: -2px;
 }
 
 .main-nav {
@@ -99,13 +108,14 @@ input {
   justify-content: center;
   gap: 32px;
   flex: 1;
+  font-size: 16px;
 }
 
 .nav-link,
 .secondary-nav a {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   color: #43516d;
-  font-size: 17px;
+  font-size: 14px;
   transition: color 0.2s ease;
   white-space: nowrap;
 }
@@ -118,8 +128,9 @@ input {
 .nav-link:hover,
 .nav-link.active,
 .secondary-nav a:hover,
-.secondary-link:hover {
-  color: var(--wema-purple);
+.secondary-link:hover 
+{
+  color:  #a31696;
 }
 
 .nav-link.active::after {
@@ -129,7 +140,7 @@ input {
   right: 0;
   bottom: 0;
   height: 3px;
-  background: var(--wema-purple);
+  background:  #a31696;
 }
 
 .arrow {
@@ -143,19 +154,20 @@ input {
   gap: 12px;
   flex-shrink: 0;
   padding: 11px 23px;
-  border-radius: 999px;
-  background: var(--wema-purple);
+  border-radius: 24px;
+  height: 30px;
+  background:  #a31696;
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   transition:
     transform 0.25s ease,
     background 0.25s ease;
 }
 
-.login-button:hover {
+/* .login-button:hover {
   background: #8b147f;
   transform: translateY(-2px);
-}
+} */
 
 .briefcase {
   font-size: 15px;
@@ -180,7 +192,8 @@ input {
 }
 
 .secondary-nav a {
-  font-size: 17px;
+  font-size: 14px;
+    font-family: "Inter", Arial, sans-serif;
 }
 
 .secondary-link {
@@ -204,11 +217,11 @@ input {
 
 .nav-dropdown:hover > .nav-link,
 .nav-dropdown:hover > .secondary-link {
-  color: var(--wema-purple);
+  color:  #a31696;
 }
 
 .nav-dropdown:hover > .secondary-link::after {
-  background: var(--wema-purple);
+  background:  #a31696;
 }
 
 .dropdown-panel {
@@ -244,16 +257,16 @@ input {
 
 .small-panel a:hover {
   background: #fbf4fb;
-  color: var(--wema-purple);
+  color:  #a31696;
 }
 
-.sustainability-panel {
-  left: 0;
+.my-panel {
+  /* left: 0; */
   width: 385px;
-  padding: 25px 20px;
+  padding: 25px 7px;
 }
 
-.sustainability-panel::before {
+.my-panel::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -266,7 +279,7 @@ input {
   border-top: 1px solid #eee;
 }
 
-.sustainability-panel a {
+.my-panel a {
   display: block;
   padding: 15px 3px;
   color: #303644;
@@ -274,8 +287,8 @@ input {
   font-weight: 600;
 }
 
-.sustainability-panel a:hover {
-  color: var(--wema-purple);
+.my-panel a:hover {
+  color:  #a31696;
 }
 
 .search-wrap {
@@ -320,12 +333,78 @@ input {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--wema-purple);
-  color: #fff;
+  background:  #a31696;
+  color: black;
   font-size: 24px;
 }
 
 .mobile-menu-button,
 .mobile-menu {
   display: none;
+}
+
+
+
+
+/* =====================================================
+   HERO SLIDER
+   ===================================================== */
+
+.hero {
+
+    /* background-color: var(--purple-dark);   placeholder bg until you add images */
+    
+
+}
+
+.hero-slide {
+
+    height: 600px;
+    display: flex;
+    width: 100%;
+
+}
+
+.hero-img {
+
+    width: 50%;
+    height: 600px;
+    object-fit:contain;
+    display: block;
+
+}
+
+
+/* Slider dots */
+
+.hero-dots button {
+
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin: 0 5px;
+
+}
+
+.hero-dots button.active {
+
+    background-color: var(--purple-light);
+
+}
+
+.slide-1{
+    background-image:url(media/imageye___-_imgi_78_web-bg-NeQw25Yh.png) ;
+    
+    display: flex ;
+    
+}
+
+.slide-2{
+    background-image: url(media/imageye___-_imgi_79_jingle-bg-Db3fxZJc.png);
+}
+
+.slide-4{
+    background-image: url(media/imageye___-_imgi_75_hero-background-NkSVHum_.png);
 }
